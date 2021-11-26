@@ -38,19 +38,6 @@ export default class Team {
   }
 
   [Symbol.iterator]() {
-    const data = Array.from(this.members);
-
-    return {
-      current: 0,
-      last: data.length,
-
-      next() {
-        if (this.current < this.last) {
-          // eslint-disable-next-line no-plusplus
-          return { done: false, value: data[this.current++] };
-        }
-        return { done: true };
-      },
-    };
+    return Array.from(this.members).values();
   }
 }
