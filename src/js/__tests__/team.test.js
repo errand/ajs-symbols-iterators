@@ -38,3 +38,10 @@ test('toArray should transform Set to Array', () => {
   const arr = team.toArray();
   expect(arr.length).toBe(2);
 });
+
+test('Check work of the Iterator', () => {
+  const team = new Team();
+  const archer = new Bowman('Archer');
+  team.add(archer);
+  for (const person of team) { expect(person.name).toBe('Archer'); }
+});

@@ -37,6 +37,10 @@ export default class Team {
     return Array.from(this.members);
   }
 
+  /**
+   * Custom iterator
+   * @return {object} - object of the Team Array
+   */
   [Symbol.iterator]() {
     return Array.from(this.members).values();
   }
